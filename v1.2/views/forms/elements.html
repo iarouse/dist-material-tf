@@ -1,0 +1,800 @@
+
+<section class="page-form-ele page" ng-controller="FormCtrl">
+
+    <!-- Switches -->
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Switches</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body padding-xl">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="margin-top: 15px;">Normal Switches</div>
+                                    <div class="col-sm-8">
+                                        <md-switch ng-model="switchData.cb1" aria-label="Switch 1"> Switch 1: {{ switchData.cb1 }} </md-switch>
+                                        <md-switch ng-model="switchData.cb2" aria-label="Switch 2" ng-true-value="'yup'" ng-false-value="'nope'"> Switch 2 {{ switchData.cb2 }} </md-switch>
+                                        <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink"> Switch (md-primary): No Ink </md-switch>
+                                    </div>
+                                </div>  
+                                <div class="divider divider-dashed divider-lg pull-in"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="margin-top: 15px;">Radio Switch</div>
+                                    <div class="col-sm-8">
+                                        <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel"> Switch (Disabled) </md-switch>
+                                        <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="switchData.cb4"> Switch (Disabled, Active) </md-switch>
+                                    </div>
+                                </div>
+
+                                <div class="divider divider-dashed divider-lg pull-in"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="margin-top: 15px;">Switch Colors</div>
+                                    <div class="col-sm-8">
+                                        <md-switch ng-model="switchData.color1" aria-label="Default"> Default </md-switch>
+                                        <md-switch ng-model="switchData.color2" aria-label="Primary" class="md-primary"> Primary </md-switch>
+                                        <md-switch ng-model="switchData.color3" aria-label="Warn" class="md-warn"> Warn </md-switch>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>         
+        </div>
+    </div>
+    <!-- end Switches -->
+
+
+    <!-- Radio, Checkbox -->
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Radio Buttons and Checkbox</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-lg-6">
+                    <section class="panel panel-default">
+                        <div class="panel-body padding-xl">
+                            <dl class="dl-horizontal no-margin">
+                                <div class="divider"></div>
+                                <dt>Radio buttons</dt>
+                                <dd>
+                                    <md-radio-group ng-model="radio.group1">
+                                        <md-radio-button value="Apple">Apple</md-radio-button>
+                                        <md-radio-button value="Banana">Banana</md-radio-button>
+                                        <md-radio-button value="Mango">Mango</md-radio-button>
+                                    </md-radio-group>
+                                </dd>
+                                <dt>Disabled</dt>
+                                <dd>
+                                    <md-radio-group ng-model="radio.group2">
+                                        <md-radio-button ng-repeat="d in radioData" ng-value="d.value" ng-disabled=" d.isDisabled "> {{ d.label }} </md-radio-button>
+                                    </md-radio-group>
+                                </dd>
+                                <dt>Colors</dt>
+                                <dd>
+                                    <md-radio-group ng-model="radio.group3">
+                                        <md-radio-button value="Default">Default</md-radio-button>
+                                        <md-radio-button class="md-primary" value="Primary">Primary</md-radio-button>
+                                        <md-radio-button class="md-warn" value="Warn">Warn</md-radio-button>
+                                    </md-radio-group>
+                                </dd>
+                            </dl>
+                        </div>
+                    </section>                    
+                </div>
+                <div class="col-lg-6">
+                    <section class="panel panel-default">
+                        <div class="panel-body padding-xl">
+                            <dl class="dl-horizontal no-margin">
+                                <div class="divider"></div>
+                                <dt>Checkbox</dt>
+                                <dd>
+                                    <md-checkbox ng-model="checkbox.cb1" aria-label="Checkbox 1"> {{ checkbox.cb1 }} </md-checkbox>
+                                    <md-checkbox ng-model="checkbox.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">{{ checkbox.cb2 }} </md-checkbox>
+                                    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="checkbox.cb5" class="md-primary">No Ink </md-checkbox>
+                                </dd>
+                                <dt>Disabled</dt>
+                                <dd>
+                                    <md-checkbox ng-disabled="true" aria-label="Disabled checkbox" ng-model="checkbox.cb3"> Checkbox: Disabled </md-checkbox>
+                                    <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="checkbox.cb4" ng-init="checkbox.cb4=true"> Checkbox: Disabled, Checked </md-checkbox>
+                                </dd>
+                                <dt>Colors</dt>
+                                <dd>
+                                    <md-checkbox ng-model="checkbox.cb6" aria-label="Default"> Default </md-checkbox>
+                                    <md-checkbox ng-model="checkbox.cb7" class="md-primary" aria-label="Pimary"> Pimary </md-checkbox>
+                                    <md-checkbox ng-model="checkbox.cb8" class="md-warn" aria-label="Warn"> Warn </md-checkbox>
+                                </dd>
+                            </dl>
+                        </div>
+                    </section>                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end Radio, Checkbox -->
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Slider</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body padding-xl">
+                            <h3>
+                                RGB <span ng-attr-style="border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </h3>
+                            <div layout>
+                                <div flex="10" layout layout-align="center center">
+                                    <span>R</span>
+                                </div>
+                                <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" class="md-warn" id="red-slider" class></md-slider>
+                                <div flex="20" layout layout-align="center center">
+                                    <input type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
+                                </div>
+                            </div>
+                            <div layout>
+                                <div flex="10" layout layout-align="center center">
+                                    <span>G</span>
+                                </div>
+                                <md-slider flex ng-model="color.green" min="0" max="255" aria-label="green" id="green-slider" class="md-green">
+                                </md-slider>
+                                <div flex="20" layout layout-align="center center">
+                                    <input type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider">
+                                </div>
+                            </div>
+                            <div layout>
+                                <div flex="10" layout layout-align="center center">
+                                    <span>B</span>
+                                </div>
+                                <md-slider flex ng-model="color.blue" min="0" max="255" aria-label="blue" id="blue-slider" class="md-primary">
+                                </md-slider>
+                                <div flex="20" layout layout-align="center center">
+                                    <input type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body padding-xl">
+                            <h3>Rating: {{rating}}/5 - demo of theming classes</h3>
+                            <div layout>
+                                <div flex="10" layout layout-align="center center">
+                                    <span>default</span>
+                                </div>
+                                <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5" aria-label="rating">
+                                </md-slider>
+                            </div>
+                            <div layout>
+                                <div flex="10" layout layout-align="center center">
+                                    <span>md-warn</span>
+                                </div>
+                                <md-slider flex class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="5" aria-label="rating">
+                                </md-slider>
+                            </div>
+                            <div layout>
+                                <div flex="10" layout layout-align="center center">
+                                    <span>md-primary</span>
+                                </div>
+                                <md-slider flex class="md-primary" md-discrete ng-model="rating3" step="1" min="1" max="5" aria-label="rating">
+                                </md-slider>
+                            </div>                        
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body padding-xl">
+                            <h3>Disabled</h3>
+                            <md-slider ng-model="disabled1" ng-disabled="true" aria-label="Disabled 1"></md-slider>
+                            <md-slider ng-model="disabled2" ng-disabled="true" aria-label="Disabled 2"></md-slider>
+                        </div>
+                    </div>                     
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body padding-xl">
+                            <h3>Disabled, Discrete</h3>
+                            <md-slider ng-model="disabled1" ng-disabled="true" step="3" md-discrete min="0" max="10" aria-label="Disabled discrete 1"></md-slider>
+                            <md-slider ng-model="disabled2" ng-disabled="true" step="10" md-discrete aria-label="Disabled discrete 2"></md-slider>
+                        </div>
+                    </div>                     
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Select -->
+<!--     <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Select</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body padding-xl">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="margin-top: 1.4em;">Normal Select</div>
+                                    <div class="col-sm-8">
+                                        <md-select ng-model="select1">
+                                            <md-option value="1">One</md-option>
+                                            <md-option value="2">Two</md-option>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-4" style="margin-top: 1.4em;">Option Groups</div>
+                                    <div class="col-sm-8">
+                                        <md-select ng-model="favoriteTopping" placeholder="Favorite Topping">
+                                            <md-optgroup label="Meats">
+                                                <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
+                                                </md-option-group>
+                                                <md-optgroup label="Veggies">
+                                                <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
+                                            </md-option-group>
+                                        </md-select>
+                                        <p class="result">{{ favoriteTopping ? 'Your favorite topping is ' + favoriteTopping : 'Please select a topping'}}</p>
+                                    </div>
+                                </div>  
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div> -->
+    <!-- Select -->
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Material Design Inputs</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <md-input-container>
+                                        <label>Company (Disabled)</label>
+                                        <input ng-model="user.company" disabled>
+                                    </md-input-container>                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <md-input-container>
+                                        <label>First Name</label>
+                                        <input ng-model="user.firstName" placeholder="Placeholder text">
+                                    </md-input-container>                            
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <md-input-container>
+                                        <label>Last Name</label>
+                                        <input ng-model="theMax">
+                                    </md-input-container> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <md-input-container>
+                                        <label>Address</label>
+                                        <input ng-model="user.address">
+                                    </md-input-container>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <md-input-container flex>
+                                                <label>City</label>
+                                                <input ng-model="user.city">
+                                            </md-input-container>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <md-input-container flex>
+                                                <label>State</label>
+                                                <input ng-model="user.state">
+                                            </md-input-container>                                        
+                                        </div>
+                                        <div class="col-md-4">
+                                            <md-input-container flex>
+                                                <label>Postal Code</label>
+                                                <input ng-model="user.postalCode">  
+                                            </md-input-container>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <md-input-container flex>
+                                        <label>Biography</label>
+                                        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>    
+        </div>
+    </div>
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Inputs, Input Variants, Textarea</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body padding-lg">
+                    <form class="form-horizontal">
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Normal input</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Rounded input</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-round">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="label-focus" class="col-sm-2">Label focus</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="label-focus">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">With help</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                                <span class="help-block">Some help text goes here.</span>
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Placeholder</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="placeholder goes here">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Disabled</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" disabled value="disabled">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Predefined value</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="http://">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Input with tooltip on focus</label>
+                            <div class="col-sm-10">
+                                <input tooltip="Tooltip on top" type="text" class="form-control" data-toggle="tooltip" data-placement="top" tooltip-trigger="focus">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Input with icons</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control">
+                                <span class="icon glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Input primary</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-primary">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Input info</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-info">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Input success</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-success">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Input warning</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-warning">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Input error</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-danger">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Control sizing</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-lg">
+                                <div class="divider"></div>
+                                <input type="text" class="form-control">
+                                <div class="divider"></div>
+                                <input type="text" class="form-control input-sm">
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Input Group</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon">@</span>
+                                    <input type="text" class="form-control" placeholder="Username">
+                                </div>
+                                <div class="divider"></div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon">.00</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon">.00</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><input type="checkbox"></span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="divider"></div>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><input type="radio"></span>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Button addons</label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">Go!</button>
+                                            </span>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">Go!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider divider-dashed divider-lg pull-in"></div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2">Textarea</label>
+                            <div class="col-sm-10">
+                                <textarea name="" id="" class="form-control" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Typeahead (Autocomplete)</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body padding-xl" data-ng-controller="TypeaheadCtrl">
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <div class="callout callout-info">
+                                <p>State is: {{selected}}</p>
+                            </div> 
+                            <div class="ui-typeahead">
+                                <input type="text" 
+                                       ng-model="selected"
+                                       typeahead="state for state in states | filter:$viewValue | limitTo:8"
+                                       class="form-control"
+                                       placeholder="Search">
+                            </div>                  
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Datepicker</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body padding-xl" data-ng-controller="DatepickerDemoCtrl">
+                    <div class="row">
+                        <div class="col-lg-4 col-lg-offset-2">
+
+                            <div class="input-group ui-datepicker">
+                                <input type="text" 
+                                       class="form-control"
+                                       datepicker-popup="{{format}}"
+                                       ng-model="dt" 
+                                       is-open="opened" 
+                                       min-date="minDate" 
+                                       max-date="'2015-06-22'" 
+                                       datepicker-options="dateOptions" 
+                                       date-disabled="disabled(date, mode)" 
+                                       ng-required="true" 
+                                       close-text="Close">
+                                <span class="input-group-addon" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                            <div class="callout callout-info">
+                                <p>Date is: {{dt | date:'fullDate'}}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <p>
+                                Format:
+                                <span class="ui-select">
+                                    <select ng-model="format"
+                                            ng-options="f for f in formats"></select>
+                                </span>
+                            </p>
+                            <div class="divider"></div>
+                            <button ui-wave class="btn btn-raised btn-w-md btn-sm btn-primary" ng-click="dt = '2015-04-28'">2015-04-28</button>
+                            <span class="space"></span>
+                            <button ui-wave class="btn btn-raised btn-w-md btn-sm btn-info" ng-click="dt = '2009-08-24'">2009-08-24</button>
+                            <span class="space"></span>
+                            <button ui-wave class="btn btn-raised btn-w-md btn-sm btn-danger" ng-click="clear()">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>   
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Timepicker</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body" data-ng-controller="TimepickerDemoCtrl">
+                    <div class="row">
+                        <div class="col-lg-4 col-lg-offset-2">
+                            <div ng-model="mytime" ng-change="changed()" style="display:inline-block;">
+                                <timepicker class="ui-timepicker" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                            </div>                    
+                            <div class="callout callout-info">
+                                <p>Time is: {{mytime | date:'shortTime' }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6"> 
+                            <p>
+                                Hours step is: 
+                                <span class="space"></span>
+                                <span class="ui-select"><select ng-model="hstep" ng-options="opt for opt in options.hstep"></select></span>
+                            </p>
+                            <p>
+                                Minutes step is: 
+                                <span class="ui-select"><select ng-model="mstep" ng-options="opt for opt in options.mstep"></select></span>
+                            </p>
+                            <div class="divider divider-lg"></div>
+                            <button ui-wave class="btn btn-raised btn-w-md btn-primary" ng-click="toggleMode()">12H / 24H</button>
+                            <div class="space"></div>
+                            <button ui-wave class="btn btn-raised btn-w-md btn-info" ng-click="update()">Set to 14:00</button>
+                            <div class="space"></div>
+                            <button ui-wave class="btn btn-raised btn-w-md btn-danger" ng-click="clear()">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Rating</h2>
+        </div>
+        <div class="col-md-12" data-ng-controller="RatingDemoCtrl">
+            <div class="row">
+                <div class="col-md-6">
+                    <section class="panel panel-default">
+                        <div class="panel-body padding-xl">
+                            <rating class="ui-rating size-h3"
+                                    ng-model="rate"
+                                    max="max"
+                                    readonly="isReadonly"
+                                    on-hover="hoveringOver(value)"
+                                    on-leave="overStar = null"
+                                    state-on="'glyphicon-star'"
+                                    state-off="'glyphicon-star-empty'"></rating>
+                            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+
+                            <div class="callout callout-info">
+                                <p>Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></p>
+                            </div>
+
+                            <button ui-wave class="btn btn-raised btn-w-md btn-primary" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
+                            <button ui-wave class="btn btn-raised btn-w-md btn-default" ng-click="rate = 0" ng-disabled="isReadonly">Clear</button>
+                        </div>
+                    </section>                    
+                </div>
+                <div class="col-md-6">
+                    <section class="panel panel-default panel-labeled">
+                        <div class="panel-body padding-xl">
+                            <div ng-init="x1 = 4">
+                                <rating class="ui-rating size-h4 ui-rating-success"
+                                        ng-model="x1"
+                                        max="6"
+                                        readonly="true"
+                                        state-on="'glyphicon-star'"
+                                        state-off="'glyphicon-star-empty'"></rating>
+                            </div>
+                            <div ng-init="x2 = 5">
+                                <rating class="ui-rating size-h3 ui-rating-info"
+                                        ng-model="x2"
+                                        max="7"
+                                        readonly="true"
+                                        state-on="'glyphicon-star'"
+                                        state-off="'glyphicon-star-empty'"></rating>
+                            </div>
+                            <div ng-init="x3 = 6">
+                                <rating class="ui-rating size-h2 ui-rating-warning"
+                                        ng-model="x3"
+                                        max="8"
+                                        readonly="true"
+                                        state-on="'glyphicon-star'"
+                                        state-off="'glyphicon-star-empty'"></rating>
+                            </div>
+                            <div ng-init="x4 = 7">
+                                <rating class="ui-rating size-h1 ui-rating-danger"
+                                        ng-model="x4"
+                                        max="9"
+                                        readonly="true"
+                                        state-on="'glyphicon-star'"
+                                        state-off="'glyphicon-star-empty'"></rating>
+                            </div>
+                            <span class="panel-label">Colorful and Sizing</span>
+                        </div>
+                    </section>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Tags Input</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body padding-xl" data-ng-controller="TagsDemoCtrl">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <tags-input ng-model="tags"
+                                        class="ui-tags-input"
+                                        ></tags-input>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+        </div>
+    </div>
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">File upload button</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body padding-xl text-center">
+                    <p>
+                        <input type="file" title="Choose File" data-ui-file-upload class="btn-raised btn-w-md">
+                        <span class="space"></span>
+                        <input type="file" title="Choose File" data-ui-file-upload class="btn-raised btn-w-md btn-primary">
+                        <span class="space"></span>
+                        <input type="file" title="Choose File" data-ui-file-upload class="btn-raised btn-w-md btn-success">
+                    </p>
+                    <p>
+                        <input type="file" title="Choose File" data-ui-file-upload class="btn-flat btn-w-md btn-info">
+                        <span class="space"></span>
+                        <input type="file" title="Choose File" data-ui-file-upload class="btn-flat btn-w-md btn-warning">
+                        <span class="space"></span>
+                        <input type="file" title="Choose File" data-ui-file-upload class="btn-flat btn-w-md btn-danger">
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">File upload with Drag and Drop</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body padding-xl">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="drop-box">Drag and drop files here</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Editor</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <div text-angular ng-model="mailContent" class="ui-editor"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</section>

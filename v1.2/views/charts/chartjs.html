@@ -1,0 +1,91 @@
+<div class="page page-chartjs"  data-ng-controller="chartjsCtrl">
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Bar and Line Charts</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <canvas class="chart chart-bar"
+                                    data="bar.data"
+                                    labels="bar.labels"
+                                    series="bar.series"
+                                    options="bar.options"></canvas> 
+                        </div>
+                    </div>             
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <canvas class="chart chart-line"
+                                    data="line.data"
+                                    series="line.series"
+                                    labels="line.labels"></canvas>
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Radar and Polar Area Charts</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <canvas class="chart chart-radar"
+                                    data="radar.data"
+                                    labels="radar.labels"></canvas>
+                        </div>
+                    </div>            
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <canvas class="chart chart-polar-area"
+                                    data="polarArea.data"
+                                    labels="polarArea.labels"></canvas> 
+                        </div>
+                    </div>             
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">Pie and Donut Charts</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <canvas class="chart chart-doughnut"
+                                    data="doughnut.data"
+                                    labels="doughnut.labels"></canvas> 
+                        </div>
+                    </div>             
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <canvas class="chart chart-pie"
+                                    data="pie.data"
+                                    labels="pie.labels"></canvas>
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
